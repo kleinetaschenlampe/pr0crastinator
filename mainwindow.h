@@ -3,6 +3,7 @@
 #include <QMenuBar>
 #include <QMenu>
 #include <QVBoxLayout>
+#include <QScrollArea>
 
 class MainWindow : public QMainWindow
 {
@@ -11,6 +12,10 @@ class MainWindow : public QMainWindow
 public:
   MainWindow(QWidget *parent = 0);
 
+public slots:
+  QWidget *addEmptyRule();
+  QWidget *addRule(QString type, QString text);
+
 private:
   QMenu *fileMenu;
   QAction *addAct;
@@ -18,12 +23,13 @@ private:
   QAction *exitAct;
   QVBoxLayout *mainLayout;
   QWidget *mainWidget;
+  QScrollArea *mainScrollArea;
 
   void createMenus();
   void createActions();
 
   void exit();
-  void addRule();
   void saveRules();
+  void loadRules();
   void deleteRule(int index);
 };

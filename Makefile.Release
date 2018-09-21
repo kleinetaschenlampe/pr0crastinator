@@ -209,6 +209,17 @@ release/moc_mainwindow.cpp: E:/Qt/5.11.1/mingw53_32/include/QtWidgets/QMainWindo
 		E:/Qt/5.11.1/mingw53_32/include/QtGui/qtouchdevice.h \
 		E:/Qt/5.11.1/mingw53_32/include/QtWidgets/qtabwidget.h \
 		E:/Qt/5.11.1/mingw53_32/include/QtGui/qicon.h \
+		E:/Qt/5.11.1/mingw53_32/include/QtWidgets/QMenuBar \
+		E:/Qt/5.11.1/mingw53_32/include/QtWidgets/qmenubar.h \
+		E:/Qt/5.11.1/mingw53_32/include/QtWidgets/qmenu.h \
+		E:/Qt/5.11.1/mingw53_32/include/QtWidgets/qaction.h \
+		E:/Qt/5.11.1/mingw53_32/include/QtWidgets/qactiongroup.h \
+		E:/Qt/5.11.1/mingw53_32/include/QtWidgets/QMenu \
+		E:/Qt/5.11.1/mingw53_32/include/QtWidgets/QVBoxLayout \
+		E:/Qt/5.11.1/mingw53_32/include/QtWidgets/qboxlayout.h \
+		E:/Qt/5.11.1/mingw53_32/include/QtWidgets/qlayout.h \
+		E:/Qt/5.11.1/mingw53_32/include/QtWidgets/qlayoutitem.h \
+		E:/Qt/5.11.1/mingw53_32/include/QtWidgets/qgridlayout.h \
 		mainwindow.h \
 		release/moc_predefs.h \
 		E:/Qt/5.11.1/mingw53_32/bin/moc.exe
@@ -345,7 +356,18 @@ release/main.o: main.cpp E:/Qt/5.11.1/mingw53_32/include/QtWidgets/QApplication 
 		E:/Qt/5.11.1/mingw53_32/include/QtWidgets/QMainWindow \
 		E:/Qt/5.11.1/mingw53_32/include/QtWidgets/qmainwindow.h \
 		E:/Qt/5.11.1/mingw53_32/include/QtWidgets/qtabwidget.h \
-		E:/Qt/5.11.1/mingw53_32/include/QtGui/qicon.h
+		E:/Qt/5.11.1/mingw53_32/include/QtGui/qicon.h \
+		E:/Qt/5.11.1/mingw53_32/include/QtWidgets/QMenuBar \
+		E:/Qt/5.11.1/mingw53_32/include/QtWidgets/qmenubar.h \
+		E:/Qt/5.11.1/mingw53_32/include/QtWidgets/qmenu.h \
+		E:/Qt/5.11.1/mingw53_32/include/QtWidgets/qaction.h \
+		E:/Qt/5.11.1/mingw53_32/include/QtWidgets/qactiongroup.h \
+		E:/Qt/5.11.1/mingw53_32/include/QtWidgets/QMenu \
+		E:/Qt/5.11.1/mingw53_32/include/QtWidgets/QVBoxLayout \
+		E:/Qt/5.11.1/mingw53_32/include/QtWidgets/qboxlayout.h \
+		E:/Qt/5.11.1/mingw53_32/include/QtWidgets/qlayout.h \
+		E:/Qt/5.11.1/mingw53_32/include/QtWidgets/qlayoutitem.h \
+		E:/Qt/5.11.1/mingw53_32/include/QtWidgets/qgridlayout.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\main.o main.cpp
 
 release/mainwindow.o: mainwindow.cpp mainwindow.h \
@@ -454,7 +476,49 @@ release/mainwindow.o: mainwindow.cpp mainwindow.h \
 		E:/Qt/5.11.1/mingw53_32/include/QtGui/qvector2d.h \
 		E:/Qt/5.11.1/mingw53_32/include/QtGui/qtouchdevice.h \
 		E:/Qt/5.11.1/mingw53_32/include/QtWidgets/qtabwidget.h \
-		E:/Qt/5.11.1/mingw53_32/include/QtGui/qicon.h
+		E:/Qt/5.11.1/mingw53_32/include/QtGui/qicon.h \
+		E:/Qt/5.11.1/mingw53_32/include/QtWidgets/QMenuBar \
+		E:/Qt/5.11.1/mingw53_32/include/QtWidgets/qmenubar.h \
+		E:/Qt/5.11.1/mingw53_32/include/QtWidgets/qmenu.h \
+		E:/Qt/5.11.1/mingw53_32/include/QtWidgets/qaction.h \
+		E:/Qt/5.11.1/mingw53_32/include/QtWidgets/qactiongroup.h \
+		E:/Qt/5.11.1/mingw53_32/include/QtWidgets/QMenu \
+		E:/Qt/5.11.1/mingw53_32/include/QtWidgets/QVBoxLayout \
+		E:/Qt/5.11.1/mingw53_32/include/QtWidgets/qboxlayout.h \
+		E:/Qt/5.11.1/mingw53_32/include/QtWidgets/qlayout.h \
+		E:/Qt/5.11.1/mingw53_32/include/QtWidgets/qlayoutitem.h \
+		E:/Qt/5.11.1/mingw53_32/include/QtWidgets/qgridlayout.h \
+		E:/Qt/5.11.1/mingw53_32/include/QtWidgets/QGroupBox \
+		E:/Qt/5.11.1/mingw53_32/include/QtWidgets/qgroupbox.h \
+		E:/Qt/5.11.1/mingw53_32/include/QtWidgets/qframe.h \
+		E:/Qt/5.11.1/mingw53_32/include/QtWidgets/QPushButton \
+		E:/Qt/5.11.1/mingw53_32/include/QtWidgets/qpushbutton.h \
+		E:/Qt/5.11.1/mingw53_32/include/QtWidgets/qabstractbutton.h \
+		E:/Qt/5.11.1/mingw53_32/include/QtWidgets/QComboBox \
+		E:/Qt/5.11.1/mingw53_32/include/QtWidgets/qcombobox.h \
+		E:/Qt/5.11.1/mingw53_32/include/QtWidgets/qabstractitemdelegate.h \
+		E:/Qt/5.11.1/mingw53_32/include/QtWidgets/qstyleoption.h \
+		E:/Qt/5.11.1/mingw53_32/include/QtWidgets/qabstractspinbox.h \
+		E:/Qt/5.11.1/mingw53_32/include/QtGui/qvalidator.h \
+		E:/Qt/5.11.1/mingw53_32/include/QtCore/qregularexpression.h \
+		E:/Qt/5.11.1/mingw53_32/include/QtWidgets/qslider.h \
+		E:/Qt/5.11.1/mingw53_32/include/QtWidgets/qabstractslider.h \
+		E:/Qt/5.11.1/mingw53_32/include/QtWidgets/qstyle.h \
+		E:/Qt/5.11.1/mingw53_32/include/QtWidgets/qtabbar.h \
+		E:/Qt/5.11.1/mingw53_32/include/QtWidgets/qrubberband.h \
+		E:/Qt/5.11.1/mingw53_32/include/QtCore/qabstractitemmodel.h \
+		E:/Qt/5.11.1/mingw53_32/include/QtWidgets/QLineEdit \
+		E:/Qt/5.11.1/mingw53_32/include/QtWidgets/qlineedit.h \
+		E:/Qt/5.11.1/mingw53_32/include/QtGui/qtextcursor.h \
+		E:/Qt/5.11.1/mingw53_32/include/QtGui/qtextformat.h \
+		E:/Qt/5.11.1/mingw53_32/include/QtGui/qpen.h \
+		E:/Qt/5.11.1/mingw53_32/include/QtGui/qtextoption.h \
+		E:/Qt/5.11.1/mingw53_32/include/QtCore/QDir \
+		E:/Qt/5.11.1/mingw53_32/include/QtCore/qdir.h \
+		E:/Qt/5.11.1/mingw53_32/include/QtCore/qfileinfo.h \
+		E:/Qt/5.11.1/mingw53_32/include/QtCore/QFile \
+		E:/Qt/5.11.1/mingw53_32/include/QtCore/QXmlStreamWriter \
+		E:/Qt/5.11.1/mingw53_32/include/QtCore/qxmlstream.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\mainwindow.o mainwindow.cpp
 
 release/moc_mainwindow.o: release/moc_mainwindow.cpp 

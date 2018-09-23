@@ -1,9 +1,13 @@
+#include "procrule.h"
 #include <vector>
 #include <QMainWindow>
 #include <QMenuBar>
 #include <QMenu>
 #include <QVBoxLayout>
 #include <QScrollArea>
+
+#ifndef MAINWINDOW_H
+#define MAINWINDOW_H
 
 class MainWindow : public QMainWindow
 {
@@ -12,9 +16,14 @@ class MainWindow : public QMainWindow
 public:
   MainWindow(QWidget *parent = 0);
 
+
 public slots:
-  QWidget *addEmptyRule();
-  QWidget *addRule(QString type, QString text);
+  Procrule *addEmptyRule();
+  Procrule *addRule(QString triggerType, QString triggerText,
+		    QString usageType, QString actionType,
+		    std::vector<QString> times);
+
+  void saveRules();
 
 private:
   QMenu *fileMenu;
@@ -29,7 +38,8 @@ private:
   void createActions();
 
   void exit();
-  void saveRules();
   void loadRules();
   void deleteRule(int index);
 };
+
+#endif

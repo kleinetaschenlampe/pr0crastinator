@@ -9,12 +9,14 @@
 #ifndef PROCRULE_H
 #define PROCRULE_H
 
+class MainWindow;
+
 class Procrule : public QWidget
 {
   Q_OBJECT
 
 public:
-  Procrule(QWidget *parent = 0);
+  Procrule(MainWindow *parent = 0);
 
   // getters & setters
   QString getTriggerType();
@@ -47,6 +49,7 @@ private:
   QString actionType;
   // weekday - timespans
   std::vector<QString> times;
+  MainWindow *parentw;
 };
 
 #endif

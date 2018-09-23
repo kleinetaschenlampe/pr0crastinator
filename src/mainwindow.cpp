@@ -7,14 +7,15 @@
 #include <QDir>
 #include <QFile>
 #include <QXmlStreamWriter>
+#include <QCloseEvent>
 
 MainWindow::MainWindow(QWidget *parent) :
-  QMainWindow(parent)
+  QMainWindow(parent),
+  modified(false),
+  mainLayout(new QVBoxLayout),
+  mainWidget(new QWidget),
+  mainScrollArea(new QScrollArea)
 {
-  mainLayout = new QVBoxLayout;
-  mainWidget = new QWidget;
-  mainScrollArea = new QScrollArea;
-
   createActions();
   createMenus();
   resize(700,400);
@@ -30,7 +31,7 @@ MainWindow::MainWindow(QWidget *parent) :
 
 Procrule *MainWindow::addEmptyRule()
 {
-  Procrule *rule = new Procrule;
+  Procrule *rule = new Procrule(this);
   mainLayout->addWidget(rule);
   return rule;
 }
@@ -140,10 +141,34 @@ void MainWindow::saveRules()
   file.close();
 }
 
-void MainWindow::exit()
+void MainWindow::closeEvent(QCloseEvent *event)
 {
-  QWidget::close();
+  if(modified == false){
+    close();
+  }else{
+    QMessageBox msgBox;
+    msgBox.setText("You have unsaved changes");
+    msgBox.setInformativeText("Do you want to save your changes?");
+    msgBox.setStandardButtons(QMessageBox::Save | QMessageBox::Discard | QMessageBox::Cancel);
+    msgBox.setDefaultButton(QMessageBox::Save);
+    int ret = msgBox.exec();
+
+    switch (ret) {
+    case QMessageBox::Save:
+      saveRules();
+      event->accept();
+      break;
+    case QMessageBox::Discard:
+      event->accept();
+      break;
+    case QMessageBox::Cancel:
+      event->ignore();
+      break;
+    }
+
+  }
 }
+
 
 void MainWindow::createActions()
 {
@@ -156,11 +181,13 @@ void MainWindow::createActions()
   addAct->setStatusTip(tr("Create a new Rule"));
   addAct->setShortcut(QKeySequence("Ctrl+n"));
   connect(addAct, &QAction::triggered, this, &MainWindow::addEmptyRule);
-
+  connect(addAct, &QAction::triggered, this, [this]{
+					       this->modified = true;
+					     });
   exitAct = new QAction(tr("&Exit"), this);
   exitAct->setStatusTip(tr("Exit the Application"));
   exitAct->setShortcut(QKeySequence("Ctrl+Shift+q"));
-  connect(exitAct, &QAction::triggered, this, &MainWindow::exit);
+  connect(exitAct, &QAction::triggered, this, &MainWindow::close);
 }
 
 void MainWindow::createMenus()

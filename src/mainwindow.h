@@ -15,7 +15,7 @@ class MainWindow : public QMainWindow
 
 public:
   MainWindow(QWidget *parent = 0);
-
+  bool modified;
 
 public slots:
   Procrule *addEmptyRule();
@@ -40,6 +40,9 @@ private:
   void exit();
   void loadRules();
   void deleteRule(int index);
+
+protected:
+  void closeEvent(QCloseEvent *event) override;
 };
 
 #endif

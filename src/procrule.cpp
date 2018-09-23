@@ -2,13 +2,14 @@
 #include "mainwindow.h"
 #include <iostream>
 
-Procrule::Procrule(QWidget *parent) :
+Procrule::Procrule(MainWindow *parent) :
   QWidget(parent),
   layout(new QHBoxLayout),
   comboTriggerType(new QComboBox),
   editTriggerText(new QLineEdit),
   buttonSettings(new QPushButton("-> Action")),
-  buttonDelete(new QPushButton("X"))
+  buttonDelete(new QPushButton("X")),
+  parentw(parent)
 {
   usageType = "Allowed";
   actionType = "Warning";
@@ -20,7 +21,16 @@ Procrule::Procrule(QWidget *parent) :
 
   connect(buttonDelete, QPushButton::clicked, this,
 	  [this]{
-	    this->setParent(0);
+	    QMessageBox msgBox;
+	    msgBox.setText("Delete Rule");
+	    msgBox.setInformativeText("Do you really want to delete this rule?");
+	    msgBox.setStandardButtons(QMessageBox::Yes | QMessageBox::No);
+	    msgBox.setDefaultButton(QMessageBox::No);
+	    int ret = msgBox.exec();
+	    if (ret == QMessageBox::Yes) {
+	      parentw->modified = true;
+	      this->setParent(0);
+	    }
 	  });
   connect(buttonSettings, QPushButton::clicked, this, Procrule::openSettings);
 
@@ -34,11 +44,7 @@ Procrule::Procrule(QWidget *parent) :
 void Procrule::openSettings(){
   settings = new ProcruleSettings(this);
   settings->show();
-  std::cout << "Settings opened";
 }
-
-
-
 
 QString Procrule::getTriggerType()
 {
